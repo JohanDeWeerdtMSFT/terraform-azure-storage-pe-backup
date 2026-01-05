@@ -124,7 +124,7 @@ resource "azurerm_private_endpoint" "dfs" {
   private_dns_zone_group {
     name = "dfs-dns-zone-group"
     private_dns_zone_ids = [
-      var.enable_hierarchical_namespace && var.private_dns_zone_dfs_id != "" ? var.private_dns_zone_dfs_id : azurerm_private_dns_zone.dfs[0].id
+      var.private_dns_zone_dfs_id != "" ? var.private_dns_zone_dfs_id : azurerm_private_dns_zone.dfs[0].id
     ]
   }
 
